@@ -199,7 +199,7 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 		 * @default
 		 * @type {string}
 		 */
-		executable: 'index',
+		executable: '',
 		/**
 		 * An alternative name for the game pck to load. The executable name is used otherwise.
 		 *
@@ -730,7 +730,7 @@ const Engine = (function () {
 				this.config.update(override);
 				// Add main-pack argument.
 				const exe = this.config.executable;
-				const pack = this.config.mainPack || `index.pck`;
+				const pack = this.config.mainPack || `${exe}.pck`;
 				this.config.args = ['--main-pack', pack].concat(this.config.args);
 				// Start and init with execName as loadPath if not inited.
 				const me = this;
